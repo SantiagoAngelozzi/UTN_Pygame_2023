@@ -22,9 +22,9 @@ form_menu_lvl = FormLvlSelect(name="form_level_select",master_surface = screen,x
 form_menu_B = FormMenuB(name="form_menu_B",master_surface = screen,x=300,y=200,w=500,h=400,color_background=(0,255,255),color_border=(255,0,255),active=False)
 form_menu_A = FormMenuA(name="form_menu_A",master_surface = screen,x=300,y=200,w=500,h=400,color_background=(255,255,0),color_border=(255,0,255),active=True)
 
-FormGameLevel1(name="form_game_L1",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False)
-FormGameLevel2(name="form_game_L2",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False)
-FormGameLevel3(name="form_game_L3",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_game_L1 = FormGameLevel1(name="form_game_L1",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_game_L2 = FormGameLevel2(name="form_game_L2",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_game_L3 = FormGameLevel3(name="form_game_L3",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False)
 
 while True:     
     
@@ -42,5 +42,19 @@ while True:
     if(aux_form_active != None):
         aux_form_active.update(lista_eventos,keys,delta_ms)
         aux_form_active.draw()
+    
+    if form_menu_lvl.is_selected:
+        selected_level = form_menu_lvl.selected_lvl
+        form_menu_lvl.is_selected = False
+
+        if selected_level == 1:
+            form_game_L1.reset_level()
+            form_game_L1.set_active("form_game_L1")
+        elif selected_level == 2:
+            form_game_L2.reset_level()
+            form_game_L2.set_active("form_game_L2")
+        elif selected_level == 3:
+            form_game_L3.reset_level()
+            form_game_L3.set_active("form_game_L3")
 
     pygame.display.flip()
