@@ -48,13 +48,13 @@ while True:
         form_menu_lvl.is_selected = False
 
         if selected_level == 1:
-            form_game_L1.reset_level()
+            form_game_L1.restart()
             form_game_L1.set_active("form_game_L1")
         elif selected_level == 2:
-            form_game_L2.reset_level()
+            form_game_L2.restart()
             form_game_L2.set_active("form_game_L2")
         elif selected_level == 3:
-            form_game_L3.reset_level()
+            form_game_L3.restart()
             form_game_L3.set_active("form_game_L3")
 
     pygame.display.flip()
