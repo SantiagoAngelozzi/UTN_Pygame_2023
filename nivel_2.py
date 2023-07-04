@@ -69,35 +69,13 @@ class FormGameLevel2(Form):
         self.pb_lives.value = self.player_1.lives 
     
     def restart(self):
-        self.player_1.reset()  # Reiniciar las propiedades del jugador
-        self.lista_enemigos = []  # Vaciar la lista de enemigos
-        self.lista_plataformas = []  # Vaciar la lista de plataformas
-        self.lista_botin = []  # Vaciar la lista de botines
-
-        # Volver a crear los enemigos, plataformas y botines según tu lógica de inicialización
-        self.lista_enemigos.append(Enemigo(600, 600, 4, 20, 10, 0, 1, 1, 0))
-        self.lista_enemigos.append(Enemigo(1000, 500, 4, 20, 10, 0, 1, 1, 0))
-        self.lista_enemigos.append(Enemigo(900, 900, 4, 20, 10, 0, 1, 1, 0))
-
-        self.lista_plataformas.append(Platform(0, 800, 100, 50, 13))
-        self.lista_plataformas.append(Platform(100, 800, 100, 50, 14))
-        self.lista_plataformas.append(Platform(200, 800, 100, 50, 15))
-        self.lista_plataformas.append(Platform(400, 700, 100, 50, 13))
-        self.lista_plataformas.append(Platform(500, 700, 100, 50, 14))
-        self.lista_plataformas.append(Platform(600, 700, 100, 50, 15))
-        self.lista_plataformas.append(Platform(800, 600, 100, 50, 13))
-        self.lista_plataformas.append(Platform(900, 600, 100, 50, 14))
-        self.lista_plataformas.append(Platform(1000, 600, 100, 50, 15))
-        self.lista_plataformas.append(Platform(0, 950, 2000, 250, 1))
-
-        self.lista_botin.append(Botin(525, 615, 20))
-        self.lista_botin.append(Botin(900, 880, 20))
-        self.lista_botin.append(Botin(900, 515, 20))
-
-        # Restablecer cualquier otro estado necesario para reiniciar el nivel
-
-        # Asegurarse de que el formulario esté activo para que se actualice correctamente
-        self.set_active(True)
+        self.player_1.reset()
+        for enemy in self.lista_enemigos:
+            enemy.reset()
+        for plataforma in self.lista_plataformas:
+            plataforma.restet()
+        for botin in self.lista_botin:
+            botin.reset()
     
     def draw(self): 
         super().draw()

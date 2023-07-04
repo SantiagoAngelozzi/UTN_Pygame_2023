@@ -19,7 +19,7 @@ class FormLvlSelect(Form):
         self.set_active(parametro)
         self.selected_lvl = 1
         
-    
+                               
     def click_lvl2(self, parametro):
         self.set_active(parametro)
         self.selected_lvl = 2
