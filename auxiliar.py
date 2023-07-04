@@ -1,4 +1,6 @@
+import json
 import pygame
+
 pygame.mixer.init()
 class Auxiliar:
     @staticmethod
@@ -42,6 +44,21 @@ class Auxiliar:
                 lista.append(surface_fotograma)
         return lista
     
+    def leer_archivo(path: str):
+        '''
+        Esta función lee un archivo json y lo devuelve como una lista.
+        ------------
+        Parametro:
+        path: tipo string -> es la ruta en donde se encuentra el archivo JSON a leer.
+        ------------
+        Retorna: 
+        lista_jugadores: tipo list[dict] -> una lista que posee el contenido del archivo JSON.
+        '''
+        with open(path, 'r') as archivo:
+            diccionario = json.load(archivo)
+            lista_niveles = diccionario["niveles"]
+        return lista_niveles
+
     def generar_musica(path: str, volumen: float):
         '''
         Función que se encarga de generar una música de fondo para mi juego
