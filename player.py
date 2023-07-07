@@ -14,7 +14,6 @@ class Player:
         self.jump_l = Auxiliar.getSurfaceFromSpriteSheet("UTN_Pygame_2023\images\caracters\player\jump.png",33,1,True,2)
         self.sound_jump = Auxiliar.generar_sonido("UTN_Pygame_2023\sonido\Boing Sound Effect  Boing Efecto de Sonido NO COPYRIGHT (HD) [2020].mp3", 1)
         self.sound_hit = Auxiliar.generar_sonido("UTN_Pygame_2023\sonido\Muerte de Minecraft - Sonido.mp3", 1)
-        self.sound_die = Auxiliar.generar_sonido("UTN_Pygame_2023\sonido\Mataron.mp3",1)
         
         self.frame = 0
         self.lives = 5
@@ -113,12 +112,11 @@ class Player:
                 self.last_collision_time = current_time
                 print(f"vidas: {self.lives}")
                 if self.lives == 0:
-                    self.sound_die.play()
                     self.is_live = False
             
             if self.check_botin_collition(lista_botin):
                 self.botin_agarrado = True
-                pass
+                self.score += 1
                      
     def is_on_platform(self,lista_plataformas):
         retorno = False
@@ -141,7 +139,7 @@ class Player:
     def check_botin_collition(self, lista_botin):
         retorno = False
         for botin in lista_botin:
-            if self.rect.colliderect(botin.rect):
+            if self.rect.colliderect(botin.rect) and botin.live == 1:
                 retorno = True
         return retorno
         

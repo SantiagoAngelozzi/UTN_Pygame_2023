@@ -17,14 +17,12 @@ class FormGameLevel3(Form):
         self.player_1 = self.generate_player()
     
         # --- GUI WIDGET --- 
-        self.button_menu = Button(master=self,x=50,y=0,w=140,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Buttons\Button_M_02.png",on_click=self.on_click_boton1,on_click_param="form_menu_A",text="MENU",font="Verdana",font_size=30,font_color=C_WHITE)
-        self.boton2 = Button(master=self,x=200,y=0,w=140,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Buttons\Button_M_02.png",on_click=self.on_click_boton1,on_click_param="form_level_select",text="niveles",font="Verdana",font_size=30,font_color=C_WHITE)
+        self.button_menu = Button(master=self,x=0,y=0,w=140,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Buttons\Button_M_02.png",on_click=self.on_click_boton1,on_click_param="form_menu_A",text="MENU",font="Verdana",font_size=30,font_color=C_WHITE)
         
-        self.text_score = Label(master=self,x=570,y=0,w=200,h=50,color_background=None,color_border=None,image_background=None,
-                                  text=f'SCORE: {str(self.player_1.score)}',font='Arial',font_size=30,font_color=C_RED)
+        self.text_score = Label(master=self,x=375,y=0,w=200,h=50,color_background=None,color_border=None,image_background=None,text=f'SCORE: {str(self.player_1.score)}',font='Arial',font_size=30,font_color=C_RED)
        
-        self.pb_lives = ProgressBar(master=self,x=350,y=0,w=240,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Bars\Bar_Background01.png",image_progress="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Bars\Bar_Segment05.png",value = 5, value_max=5)
-        self.widget_list = [self.button_menu,self.text_score,self.pb_lives,self.boton2]
+        self.pb_lives = ProgressBar(master=self,x=150,y=0,w=240,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Bars\Bar_Background01.png",image_progress="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Bars\Bar_Segment05.png",value = 5, value_max=5)
+        self.widget_list = [self.button_menu,self.text_score,self.pb_lives]
         
         # --- GAME ELEMNTS --- 
         self.static_background = Background(x=0,y=0,width=w,height=h,path="UTN_Pygame_2023/images/locations/all.png")
@@ -85,13 +83,13 @@ class FormGameLevel3(Form):
 
         self.pb_lives.value = self.player_1.lives 
 
-        if self.player_1.score > 1000:
+        if self.player_1.score >= 3:
             self.reiniciar_nivel()
-            self.set_active("form_menu_selct_level")
+            self.set_active("form_menu_win")
                 
         if self.player_1.lives < 1:
             self.reiniciar_nivel()
-            self.set_active("form_menu_principal")
+            self.set_active("form_menu_die")
             
     def on_click_boton1(self, parametro):
         print("entro")
