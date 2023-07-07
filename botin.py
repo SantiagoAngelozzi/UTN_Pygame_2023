@@ -1,6 +1,7 @@
 import pygame
 from constantes import *
 from auxiliar import Auxiliar
+from player import Player
 
 class Botin:
     def __init__(self,x,y,frame_rate_ms) -> None:
@@ -30,6 +31,8 @@ class Botin:
             self.botin_agarrado = True
             if self.live == 0:
                 self.sound_botin.play()
+                player.score += 1
+                
 
     def do_animation(self,delta_ms):
         self.tiempo_transcurrido_animation += delta_ms

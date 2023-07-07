@@ -13,6 +13,7 @@ class FormGameLevel3(Form):
     def __init__(self,name,master_surface,x,y,w,h,color_background,color_border,active,nivel_json):
         super().__init__(name,master_surface,x,y,w,h,color_background,color_border,active)
 
+        self.time_remaining = DURACION_LEVEL * 1000
         self.levels = nivel_json
         self.player_1 = self.generate_player()
     
@@ -20,9 +21,10 @@ class FormGameLevel3(Form):
         self.button_menu = Button(master=self,x=0,y=0,w=140,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Buttons\Button_M_02.png",on_click=self.on_click_boton1,on_click_param="form_menu_A",text="MENU",font="Verdana",font_size=30,font_color=C_WHITE)
         
         self.text_score = Label(master=self,x=375,y=0,w=200,h=50,color_background=None,color_border=None,image_background=None,text=f'SCORE: {str(self.player_1.score)}',font='Arial',font_size=30,font_color=C_RED)
-       
+        self.text_time = Label(master=self,x=550,y=0,w=200,h=50,color_background=None,color_border=None,image_background=None,text=f'TIME: {(self.time_remaining)}',font='Arial',font_size=30,font_color=C_RED)
+
         self.pb_lives = ProgressBar(master=self,x=150,y=0,w=240,h=50,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Bars\Bar_Background01.png",image_progress="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Bars\Bar_Segment05.png",value = 5, value_max=5)
-        self.widget_list = [self.button_menu,self.text_score,self.pb_lives]
+        self.widget_list = [self.button_menu,self.text_score,self.pb_lives,self.text_time]
         
         # --- GAME ELEMNTS --- 
         self.static_background = Background(x=0,y=0,width=w,height=h,path="UTN_Pygame_2023/images/locations/all.png")
@@ -78,16 +80,17 @@ class FormGameLevel3(Form):
             
 
         self.text_score._text = f'SCORE: {str(self.player_1.score)}'
+        self.text_time._text = f"TIME: { self.time_remaining}"
         self.player_1.events(delta_ms,keys)
         self.player_1.update(delta_ms,self.platform_list,self.enemies_list,self.botin_lista)
-
+        self.time_remaining -= delta_ms
         self.pb_lives.value = self.player_1.lives 
 
         if self.player_1.score >= 3:
             self.reiniciar_nivel()
             self.set_active("form_menu_win")
                 
-        if self.player_1.lives < 1:
+        if self.player_1.lives < 1 or self.time_remaining <= 0:
             self.reiniciar_nivel()
             self.set_active("form_menu_die")
             
@@ -110,7 +113,7 @@ class FormGameLevel3(Form):
         self.generate_enemies()
         self.generate_platform()
         self.generate_botin()
-
+        self.time_remaining = DURACION_LEVEL * 1000
         
     def draw(self): 
         super().draw()

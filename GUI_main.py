@@ -12,6 +12,7 @@ from GUI_form_nivel_2 import FormGameLevel2
 from GUI_form_nivel_3 import FormGameLevel3
 from GUI_form_menu_win import FormMenuWin
 from GUI_form_menu_gameover import FormMenuGameOver
+from GUI_form_menu_instrucciones import FormMenuInstrucciones
 
 flags = DOUBLEBUF 
 screen = pygame.display.set_mode((ANCHO_VENTANA,ALTO_VENTANA), flags, 16)
@@ -20,11 +21,12 @@ clock = pygame.time.Clock()
 nivel_json = Auxiliar.leer_archivo("niveles.json")
 music_path = "UTN_Pygame_2023\sonido\La canción de Yoshi bailando -TACA A XERECA PRA MIM  sub español.mp3"
 
-form_menu_A = FormMenuA(name="form_menu_A",master_surface = screen,x=700,y=200,w=500,h=400,color_background=(255,255,0),color_border=(255,0,255),active=True)
-form_menu_lvl = FormLvlSelect(name="form_level_select",master_surface = screen,x=700,y=200,w=500,h=400,color_background=(0,255,255),color_border=(255,0,255),active=False)
-form_menu_B = FormMenuB(name="form_menu_B",master_surface = screen,x=700,y=200,w=500,h=400,color_background=(0,255,255),color_border=(255,0,255),active=False)
-form_menu_win = FormMenuWin(name="form_menu_win",master_surface = screen,x=700,y=200,w=500,h=400,color_background=(0,255,255),color_border=(255,0,255),active=False)
-form_menu_die = FormMenuGameOver(name="form_menu_die",master_surface = screen,x=700,y=200,w=500,h=400,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_menu_A = FormMenuA(name="form_menu_A",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(255,255,0),color_border=(255,0,255),active=True)
+form_menu_lvl = FormLvlSelect(name="form_level_select",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_menu_B = FormMenuB(name="form_menu_B",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_menu_win = FormMenuWin(name="form_menu_win",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_menu_die = FormMenuGameOver(name="form_menu_die",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,255,255),color_border=(255,0,255),active=False)
+form_menu_instrucciones = FormMenuInstrucciones(name="form_menu_instrucciones",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,255,255),color_border=(255,0,255),active=False)
 
 form_game_L1 = FormGameLevel1(name="form_game_L1",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False,nivel_json=nivel_json)
 form_game_L2 = FormGameLevel2(name="form_game_L2",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False,nivel_json=nivel_json)

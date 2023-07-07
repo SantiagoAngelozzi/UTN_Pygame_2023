@@ -34,7 +34,6 @@ class Player:
         self.rect.x = x
         self.rect.y = y
         
-        self.botin_agarrado = False
         self.collision_flag = False
         self.is_live = True
         self.is_jump = False
@@ -113,10 +112,6 @@ class Player:
                 print(f"vidas: {self.lives}")
                 if self.lives == 0:
                     self.is_live = False
-            
-            if self.check_botin_collition(lista_botin):
-                self.botin_agarrado = True
-                self.score += 1
                      
     def is_on_platform(self,lista_plataformas):
         retorno = False
