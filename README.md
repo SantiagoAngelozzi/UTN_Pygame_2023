@@ -1,7 +1,6 @@
-<h1 align="center">hola, mi nombre es Santiago</h1>
-<h3 align="center">estoy estudiando programacion en la UTN (Universidad Tecnologica Nacional)</h3>
+<h1 align="center">PROYECTO PYGAME 2023</h1>
 
-Actualmente estoy trabajando en un videojuego que es mi proyecto final de Programacion I. Es un juego de plataformas y enemigos similar al Mario ya que me inspire en el. También tiene algunos Detalles y sonidos de otros juegos y cosas que me gustan para darle mi toque.
+Hola mi mombre es Santiago Angelozzi, actualmente estoy trabajando en un videojuego que es mi proyecto final de Programacion I. Es un juego de plataformas y enemigos similar al Mario ya que me inspire en el. También tiene algunos Detalles y sonidos de otros juegos y cosas que me gustan para darle mi toque.
 
 <h3> CARACTERISTICAS DEL JUEGO </h3>
 
