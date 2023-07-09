@@ -27,7 +27,7 @@ class FormGameLevel2(Form):
         self.widget_list = [self.button_menu,self.text_score,self.pb_lives, self.text_time]
         
         # --- GAME ELEMNTS --- 
-        self.static_background = Background(x=0,y=0,width=w,height=h,path="UTN_Pygame_2023/images/locations/alll.png")
+        self.static_background = Background(x=0,y=0,width=w,height=h,path="UTN_Pygame_2023/images/locations/thumb-1920-68605.jpg")
 
         self.enemies_list = []
         self.generate_enemies()
@@ -86,7 +86,7 @@ class FormGameLevel2(Form):
         self.time_remaining -= delta_ms
         self.pb_lives.value = self.player_1.lives 
 
-        if self.player_1.score >= 3:
+        if self.player_1.score >= 5:
             self.reiniciar_nivel()
             self.set_active("form_game_L3")
                 

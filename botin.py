@@ -1,7 +1,7 @@
 import pygame
 from constantes import *
 from auxiliar import Auxiliar
-from player import Player
+import time
 
 class Botin:
     def __init__(self,x,y,frame_rate_ms) -> None:
@@ -19,18 +19,19 @@ class Botin:
         self.rect.y = y
         self.botin_agarrado = False
         self.is_jump = False
+        self.last_collision_time = 0
         self.tiempo_transcurrido_animation = 0
         self.frame_rate_ms = frame_rate_ms 
         self.tiempo_transcurrido_move = 0
         self.y_start_jump = 0
         self.rect_ground_collition = pygame.Rect(self.rect.x + self.rect.w / 3, self.rect.y + self.rect.h - GROUND_RECT_H, self.rect.w / 3, GROUND_RECT_H)
-
+    
     def do_sound(self,player):
         if self.check_player_collition(player) == True:
             self.live -= 1
-            self.botin_agarrado = True
+            self.botin_agarrado = True 
             if self.live == 0:
-                self.sound_botin.play()
+                self.sound_botin.play()  
                 player.score += 1
                 
 
@@ -60,4 +61,3 @@ class Botin:
         if self.botin_agarrado == False:
             self.image = self.animation[self.frame]
             screen.blit(self.image,self.rect)
-    

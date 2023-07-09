@@ -27,7 +27,7 @@ class FormGameLevel1(Form):
         self.widget_list = [self.button_menu,self.text_score,self.pb_lives,self.text_time]
         
         # --- GAME ELEMNTS --- 
-        self.static_background = Background(x=0,y=0,width=w,height=h,path="UTN_Pygame_2023\images\locations\PC Computer - Puyo Puyo Champions - Desert.png")
+        self.static_background = Background(x=0,y=0,width=w,height=h,path="UTN_Pygame_2023/images/locations/thumb-1920-1118887.jpg")
 
         self.enemies_list = []
         self.generate_enemies()
