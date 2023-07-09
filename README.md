@@ -25,7 +25,7 @@ Hola mi mombre es Santiago Angelozzi, actualmente estoy trabajando en un videoju
 
 [![Captura-de-pantalla-6.png](https://i.postimg.cc/C5kQFXb2/Captura-de-pantalla-6.png)](https://postimg.cc/5Q93gP75)
 
-[![Captura-de-pantalla-7.png](https://i.postimg.cc/Hx7S2RvL/Captura-de-pantalla-7.png)](https://postimg.cc/FdNgFW4t)
+[![Captura-de-pantalla-9.png](https://i.postimg.cc/fLfN4024/Captura-de-pantalla-9.png)](https://postimg.cc/ZBngp0zj)
 
 <h3> CONTACTO </h3>
 
