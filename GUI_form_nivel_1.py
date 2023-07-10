@@ -88,7 +88,7 @@ class FormGameLevel1(Form):
 
         if self.player_1.score >= 3:
             self.reiniciar_nivel()
-            self.set_active("form_game_L2")
+            self.set_active("form_menu_win")
                 
         if self.player_1.lives < 1 or self.time_remaining <= 0:
             self.reiniciar_nivel()

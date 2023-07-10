@@ -7,18 +7,19 @@ def crear_tabla():
                             (       
                                     id integer primary key autoincrement,
                                     nombre text,
+                                    nivel integer,
                                     puntaje integer
                             )
                         '''
             conexion.execute(sentencia)
             print("Se creo la tabla usuarios")                       
-        except sqlite3.OperationalError:
+        except:
             print("La tabla ya existe")
 
-def insertar_linea(name,puntaje):
+def insertar_linea(nombre,nivel,puntaje):
     with sqlite3.connect("puntajes.db") as conexion:
         try:
-            conexion.execute("insert into usuarios (name,puntaje) values (?,?)", (name,puntaje))
+            conexion.execute("insert into usuarios (nombre,nivel,puntaje) values (?,?,?)", (nombre,nivel,puntaje))
             conexion.commit()
         except sqlite3.OperationalError:
             print("error")

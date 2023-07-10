@@ -13,6 +13,7 @@ class FormGameLevel3(Form):
     def __init__(self,name,master_surface,x,y,w,h,color_background,color_border,active,nivel_json):
         super().__init__(name,master_surface,x,y,w,h,color_background,color_border,active)
 
+        self.puntaje_final = 0
         self.time_remaining = DURACION_LEVEL * 1000
         self.levels = nivel_json
         self.player_1 = self.generate_player()
@@ -97,13 +98,8 @@ class FormGameLevel3(Form):
     def on_click_boton1(self, parametro):
         print("entro")
         self.reiniciar_nivel()
-        self.set_active(parametro) 
-
-    def obtener_puntaje_total(self):
-        self.puntaje_total = self.player_1.score + self.time_remaining
-        return self.puntaje_total     
-            
-        
+        self.set_active(parametro)     
+                  
     def reiniciar_nivel(self):
         self.player_1 = self.generate_player()
         self.boss = None
