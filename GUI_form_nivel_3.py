@@ -98,7 +98,10 @@ class FormGameLevel3(Form):
         print("entro")
         self.reiniciar_nivel()
         self.set_active(parametro) 
-           
+
+    def obtener_puntaje_total(self):
+        self.puntaje_total =  self.puntaje_total = self.player_1.score + self.time_remaining
+        return self.puntaje_total     
             
         
     def reiniciar_nivel(self):
@@ -114,6 +117,7 @@ class FormGameLevel3(Form):
         self.generate_platform()
         self.generate_botin()
         self.time_remaining = DURACION_LEVEL * 1000
+        self.puntaje_total = 0
         
     def draw(self): 
         super().draw()

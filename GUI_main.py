@@ -15,11 +15,12 @@ from GUI_form_menu_gameover import FormMenuGameOver
 from GUI_form_menu_instrucciones import FormMenuInstrucciones
 from GUI_form_menu_settings import FormMenuSettings
 
+
 flags = DOUBLEBUF 
 screen = pygame.display.set_mode((ANCHO_VENTANA,ALTO_VENTANA), flags, 16)
 pygame.init()
 clock = pygame.time.Clock()
-nivel_json = Auxiliar.leer_archivo("niveles.json")
+nivel_json = Auxiliar.leer_archivo("UTN_Pygame_2023/niveles.json")
 pygame.mixer.init()
 pygame.mixer.music.load("UTN_Pygame_2023\sonido\La canción de Yoshi bailando -TACA A XERECA PRA MIM  sub español.mp3")
 pygame.mixer.music.set_volume(0.1)
