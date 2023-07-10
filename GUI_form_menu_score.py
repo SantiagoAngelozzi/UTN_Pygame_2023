@@ -12,7 +12,7 @@ class FormMenuScore(Form):
 
         self.lista_puntajes = sql.devolver_puntaje()
 
-        self.title = Label(master=self,x=100,y=100,w=400,text="puntaje usuarios",color_border=None,font="Verdana",font_size=50,font_color=C_YELLOW_2)
+        self.title = Label(master=self,x=100,y=100,w=400,text="puntajes",color_border=None,font="Verdana",font_size=50,font_color=C_RED)
         self.puesto_1 = Label(master=self,x=100,y=200,w=400,text=f"{self.lista_puntajes[0]}",color_border=None,font="Verdana",font_size=30,font_color=C_WHITE)
         self.puesto_2 = Label(master=self,x=100,y=250,w=400,text=f"{self.lista_puntajes[1]}",color_border=None,font="Verdana",font_size=30,font_color=C_WHITE)
         self.puesto_3 = Label(master=self,x=100,y=300,w=400,text=f"{self.lista_puntajes[2]}",color_border=None,font="Verdana",font_size=30,font_color=C_WHITE)
