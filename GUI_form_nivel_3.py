@@ -100,7 +100,7 @@ class FormGameLevel3(Form):
         self.set_active(parametro) 
 
     def obtener_puntaje_total(self):
-        self.puntaje_total =  self.puntaje_total = self.player_1.score + self.time_remaining
+        self.puntaje_total = self.player_1.score + self.time_remaining
         return self.puntaje_total     
             
         
