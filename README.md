@@ -11,7 +11,7 @@ Hola mi mombre es Santiago Angelozzi, actualmente estoy trabajando en un videoju
 
 <h3> MEJORAS EN EL FUTURO </h3>
 -mejorar la calidad del menu
--agregar mas variedad de enemigos
+-agregar mas variedad de enemigos y trampas
 -hacer mas niveles jugables
 -otros tipos de consumibles que afecten al juego
 

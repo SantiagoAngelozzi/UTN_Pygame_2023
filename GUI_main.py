@@ -14,7 +14,7 @@ from GUI_form_menu_win import FormMenuWin
 from GUI_form_menu_gameover import FormMenuGameOver
 from GUI_form_menu_instrucciones import FormMenuInstrucciones
 from GUI_form_menu_settings import FormMenuSettings
-
+from GUI_form_menu_score import FormMenuScore
 
 flags = DOUBLEBUF 
 screen = pygame.display.set_mode((ANCHO_VENTANA,ALTO_VENTANA), flags, 16)
@@ -33,6 +33,7 @@ form_menu_win = FormMenuWin(name="form_menu_win",master_surface = screen,x=700,y
 form_menu_die = FormMenuGameOver(name="form_menu_die",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,0,0),color_border=(255,0,255),active=False)
 form_menu_instrucciones = FormMenuInstrucciones(name="form_menu_instrucciones",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,0,0),color_border=(255,0,255),active=False)
 form_menu_settings = FormMenuSettings(name="form_menu_settings",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,0,0),color_border=(255,0,255),active=False)
+form_menu_score = FormMenuScore(name="form_menu_score",master_surface = screen,x=700,y=200,w=700,h=700,color_background=(0,0,0),color_border=(255,0,255),active=False)
 
 form_game_L1 = FormGameLevel1(name="form_game_L1",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False,nivel_json=nivel_json)
 form_game_L2 = FormGameLevel2(name="form_game_L2",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,255,255),color_border=(255,0,255),active=False,nivel_json=nivel_json)

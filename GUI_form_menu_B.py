@@ -13,7 +13,7 @@ class FormMenuB(Form):
         self.boton1 = Button(master=self,x=0,y=300,w=200,h=40,color_background=C_GREEEN_2,color_border=C_YELLOW_2,on_click=self.on_click_boton1,on_click_param="form_menu_A",text="volver",font="Verdana",font_size=30,font_color=C_BLACK)
         self.boton2 = Button(master=self,x=0,y=400,w=200,h=40,color_background=C_PINK,color_border=C_RED,on_click=self.on_click_boton2,on_click_param="",text="AGREGAR",font="Verdana",font_size=30,font_color=C_BLACK)
         self.boton3 = Button(master=self,x=0,y=500,w=200,h=40,color_background=C_PINK,color_border=C_RED,on_click=self.on_click_boton3,on_click_param="",text="CREAR",font="Verdana",font_size=30,font_color=C_BLACK)
-        self.boton4 = Button(master=self,x=0,y=600,w=200,h=40,color_background=C_PINK,color_border=C_RED,on_click=self.on_click_boton4,on_click_param="",text="MOSTRAR",font="Verdana",font_size=30,font_color=C_BLACK)
+        self.boton4 = Button(master=self,x=0,y=600,w=200,h=40,color_background=C_PINK,color_border=C_RED,on_click=self.on_click_boton4,on_click_param="form_menu_score",text="MOSTRAR",font="Verdana",font_size=30,font_color=C_BLACK)
        
         self.instrucciones = Label(master=self,x=0,y=0,w=300,h=50,color_background=None,color_border=None,image_background=None,text="ingresa nombre ->",font='Arial',font_size=30,font_color=C_RED)
         self.txt1 = TextBox(master=self,x=300,y=0,w=240,h=40,color_background=None,color_border=None,image_background="UTN_Pygame_2023\images\set_gui_01\Comic_Border\Buttons\Button_XL_08.png",text="aqui",font="Verdana",font_size=30,font_color=C_BLACK)
@@ -27,14 +27,14 @@ class FormMenuB(Form):
         self.set_active(parametro)
 
     def on_click_boton2(self, parametro):
-        insertar_linea(self.txt1._text, self.txt2._text,self.txt3._text)
+        sql.insertar_linea(self.txt1._text, self.txt2._text,self.txt3._text)
         
     def on_click_boton3(self, parametro):
-        crear_tabla()
+        sql.crear_tabla()
         
     def on_click_boton4(self, parametro):
-        leer_tabla()
-        
+        self.set_active(parametro)
+
     def update(self, lista_eventos,keys,delta_ms):
         for aux_widget in self.lista_widget:
             aux_widget.update(lista_eventos)

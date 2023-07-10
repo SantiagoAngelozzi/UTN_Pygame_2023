@@ -103,12 +103,8 @@ class FormGameLevel2(Form):
         
     def reiniciar_nivel(self):
         self.player_1 = self.generate_player()
-        self.boss = None
         self.platform_list = []
-        self.enemies_list = []
-        self.bullet_list = []
-        self.proyectile_list = []
-        self.proyectile_enemy_list = []   
+        self.enemies_list = []  
         self.botin_lista = []
         self.generate_enemies()
         self.generate_platform()
