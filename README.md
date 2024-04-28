@@ -17,8 +17,6 @@ Hola, mi mombre es Santiago Angelozzi. Actualmente estoy trabajando en un videoj
 
 <h3> TRAILER DEL JUEGO</h3>
 
-[GamePlay](https://youtu.be/z-GnW-flzCc)
-
 <h3> acá hay algunas imágenes del juego </h3>
 
 ([![Captura-de-pantalla-2.png](https://i.postimg.cc/J7smwzvy/Captura-de-pantalla-2.png)](https://postimg.cc/s1Cb7sVy))
